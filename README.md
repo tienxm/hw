@@ -1,3 +1,16 @@
+```mermaid
+flowchart LR
+    U[使用者<br>(多因子驗證)]
+    AI[AI 模組<br>(策略產生)]
+    API[API Gateway<br>(JWT / mTLS 驗證)]
+    DB[資料庫<br>(零信任存取、脫敏)]
+    M[監控中心<br>(UEBA / SOAR)]
+
+    U --> AI --> API
+    API --> DB
+    API --> M
+    DB <--> M
+
 ### Mermaid
 ```mermaid
 gantt
